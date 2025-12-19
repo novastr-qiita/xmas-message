@@ -154,7 +154,6 @@
             }
         }
 
-        /* 烟花效果 */
         .firework {
             position: fixed;
             width: 4px;
@@ -175,7 +174,6 @@
             }
         }
 
-        /* 飘落的装饰物 */
         .falling-decoration {
             position: fixed;
             font-size: 20px;
@@ -195,7 +193,6 @@
             }
         }
 
-        /* 按钮点击波纹效果 */
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -276,7 +273,6 @@
             "温もりあふれるクリスマスをお過ごしください。🎁💝 喜びに満ちた日々が続きますように。"
         ];
 
-        // 烟花效果
         function createFireworks(x, y) {
             const colors = ['#ff6b9d', '#ffa5c0', '#ffd4e5', '#7b8cde', '#a8d5ff', '#ffd700', '#ff69b4'];
             const particleCount = 30;
@@ -303,7 +299,6 @@
             }
         }
 
-        // 飘落的圣诞装饰
         function createFallingDecorations() {
             const decorations = ['❄️', '⭐', '🎄', '🎁', '🔔', '✨', '💫'];
             const count = 15;
@@ -322,7 +317,6 @@
             }
         }
 
-        // 按钮波纹效果
         function createRipple(e) {
             const button = e.currentTarget;
             const ripple = document.createElement('span');
@@ -346,17 +340,14 @@
             const greetingElement = document.getElementById('greeting');
             const randomIndex = Math.floor(Math.random() * greetings.length);
             
-            // 文字动画效果
             greetingElement.classList.remove('fade-in');
             void greetingElement.offsetWidth;
             greetingElement.classList.add('fade-in');
             
             greetingElement.textContent = greetings[randomIndex];
             
-            // 创建绚丽效果
             createRipple(e);
             
-            // 烟花效果（多个位置）
             for (let i = 0; i < 3; i++) {
                 setTimeout(() => {
                     const x = Math.random() * window.innerWidth;
@@ -365,7 +356,6 @@
                 }, i * 200);
             }
             
-            // 飘落装饰效果
             createFallingDecorations();
         }
     </script>
